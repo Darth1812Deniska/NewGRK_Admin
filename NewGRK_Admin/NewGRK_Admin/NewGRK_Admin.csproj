@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserConfig.cs" />
     <EmbeddedResource Include="grkObjectForm.resx">
       <DependentUpon>grkObjectForm.cs</DependentUpon>
     </EmbeddedResource>

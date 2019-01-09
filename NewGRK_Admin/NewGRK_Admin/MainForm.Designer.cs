@@ -35,7 +35,7 @@
             // 
             // btnCreateObject
             // 
-            this.btnCreateObject.Location = new System.Drawing.Point(12, 12);
+            this.btnCreateObject.Location = new System.Drawing.Point(12, 24);
             this.btnCreateObject.Name = "btnCreateObject";
             this.btnCreateObject.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnCreateObject.Size = new System.Drawing.Size(100, 100);
@@ -45,7 +45,7 @@
             // 
             // btnEditObject
             // 
-            this.btnEditObject.Location = new System.Drawing.Point(118, 12);
+            this.btnEditObject.Location = new System.Drawing.Point(118, 24);
             this.btnEditObject.Name = "btnEditObject";
             this.btnEditObject.Size = new System.Drawing.Size(100, 100);
             this.btnEditObject.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // btnEtc
             // 
-            this.btnEtc.Location = new System.Drawing.Point(224, 12);
+            this.btnEtc.Location = new System.Drawing.Point(224, 24);
             this.btnEtc.Name = "btnEtc";
             this.btnEtc.Size = new System.Drawing.Size(100, 100);
             this.btnEtc.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 386);
+            this.ClientSize = new System.Drawing.Size(336, 150);
             this.Controls.Add(this.btnEtc);
             this.Controls.Add(this.btnEditObject);
             this.Controls.Add(this.btnCreateObject);

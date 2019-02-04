@@ -5,7 +5,6 @@ D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\bin\Debug\Newtonsoft.Json.dll
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\bin\Debug\NLog.dll
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\bin\Debug\Newtonsoft.Json.xml
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\bin\Debug\NLog.xml
-D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.csprojResolveAssemblyReference.cache
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.grkObjectForm.resources
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.MainForm.resources
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.Properties.Resources.resources
@@ -13,3 +12,6 @@ D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.csproj.Generate
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.csproj.CoreCompileInputs.cache
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.exe
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.pdb
+D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.csprojAssemblyReference.cache
+D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.csproj.CopyComplete
+D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin.SettingsForm.resources

@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeSettingsForm.Designer.cs">
+      <DependentUpon>ChangeSettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="grkDocument.cs" />
     <Compile Include="grkObject.cs" />
     <Compile Include="grkObjectForm.cs">
@@ -81,6 +87,9 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserConfig.cs" />
+    <EmbeddedResource Include="ChangeSettingsForm.resx">
+      <DependentUpon>ChangeSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="grkObjectForm.resx">
       <DependentUpon>grkObjectForm.cs</DependentUpon>
     </EmbeddedResource>

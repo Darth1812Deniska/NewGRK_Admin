@@ -125,3 +125,5 @@ D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\UserSettings.g.cs
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\NewGRK_Admin_Content.g.cs
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\bin\Debug\NLog.config
 D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\UserSettings.baml
+D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\ProjectSettings.g.cs
+D:\NewGRK_Admin\NewGRK_Admin\NewGRK_Admin\obj\Debug\ProjectSettings.baml

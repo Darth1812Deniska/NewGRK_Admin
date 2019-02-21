@@ -22,14 +22,15 @@ namespace NewGRK_Admin
     /// </summary>
     public partial class MainWindow : Window
     {
-        UserInfo UserInfo { get; set; }
+        private UserInfo UserInfo;
+        private const string UserInfoFileName = "GRK_UserInfo.xml";
         public MainWindow()
         {
             InitializeComponent();
             XmlSerializer serializer = new XmlSerializer(typeof(UserInfo));
-            if (File.Exists("GRK_UserInfo.xml"))
+            if (File.Exists(UserInfoFileName))
             {
-                using (FileStream fs = new FileStream("GRK_UserInfo.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(UserInfoFileName, FileMode.OpenOrCreate))
                 {
                     UserInfo = (UserInfo)serializer.Deserialize(fs);
                 }
@@ -38,17 +39,17 @@ namespace NewGRK_Admin
             {
                 UserSettings userSettings = new UserSettings();
                 userSettings.ShowDialog();
-                using (FileStream fs = new FileStream("GRK_UserInfo.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(UserInfoFileName, FileMode.OpenOrCreate))
                 {
                     UserInfo = (UserInfo)serializer.Deserialize(fs);
                 }
             }
-
         }
 
         private void BtnCreateObject_Click(object sender, RoutedEventArgs e)
         {
-
+            ProjectSettings projectSettings = new ProjectSettings(UserInfo);
+            projectSettings.ShowDialog();
         }
 
         private void MiSettings_Click(object sender, RoutedEventArgs e)

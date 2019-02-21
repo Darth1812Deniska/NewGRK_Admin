@@ -81,7 +81,7 @@
     </ApplicationDefinition>
     <Compile Include="grkDocument.cs" />
     <Compile Include="grkObject.cs" />
-    <Compile Include="IGRK_BD.cs" />
+    <Compile Include="IGRK_DB.cs" />
     <Compile Include="MSSQL_DB.cs" />
     <Compile Include="ObjectTypeClass.cs" />
     <Compile Include="OrderInfo.cs" />
@@ -89,6 +89,10 @@
     <Compile Include="ProjectSettings.xaml.cs">
       <DependentUpon>ProjectSettings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProjectWindow.xaml.cs">
+      <DependentUpon>ProjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServerInfo.cs" />
     <Compile Include="UserInfo.cs" />
     <Compile Include="UserSettings.xaml.cs">
       <DependentUpon>UserSettings.xaml</DependentUpon>
@@ -106,6 +110,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProjectSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

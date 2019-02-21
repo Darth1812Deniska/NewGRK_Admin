@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfServerInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ServerInfo>
+    <ServerName>DSUD-KTRV</ServerName>
+    <GRK_DBType>MSSQL</GRK_DBType>
+    <DBName>LD</DBName>
+    <Login>dba</Login>
+    <Password>sql</Password>
+  </ServerInfo>
+  <ServerInfo>
+    <ServerName>dsud-psrnkb</ServerName>
+    <GRK_DBType>Postgres</GRK_DBType>
+    <DBName>postgres</DBName>
+    <Login>dbo</Login>
+    <Password>dbo</Password>
+  </ServerInfo>
+  <ServerInfo>
+    <ServerName>DSUDVM-PNPPK</ServerName>
+    <GRK_DBType>MSSQL</GRK_DBType>
+    <DBName>LD_CONV</DBName>
+    <Login>dba</Login>
+    <Password>sql</Password>
+  </ServerInfo>
+  <ServerInfo>
+    <ServerName>dsud-psql</ServerName>
+    <GRK_DBType>Postgres</GRK_DBType>
+    <DBName>postgres</DBName>
+    <Login>dbo</Login>
+    <Password>dbo</Password>
+  </ServerInfo>
+</ArrayOfServerInfo>

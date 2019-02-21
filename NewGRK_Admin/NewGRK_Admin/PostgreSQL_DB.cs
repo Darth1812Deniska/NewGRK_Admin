@@ -10,19 +10,24 @@ namespace NewGRK_Admin
 {
     class PostgreSQL_DB : IGRK_DB
     {
-        public string ConnectionString { get ; set ; }
-        public string DataBaseName { get ; set ; }
-        public string ServerName { get ; set ; }
-        public string Login { get ; set ; }
-        public string Password { get ; set ; }
+        private readonly GRK_DBType _gRK_DBType;
 
-        public PostgreSQL_DB (string serverName, string dbName, string login, string password)
+        public string ConnectionString { get; set; }
+        public string DataBaseName { get; set; }
+        public string ServerName { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+
+        public GRK_DBType GRK_DBType => _gRK_DBType;
+        public PostgreSQL_DB(string serverName, string dbName, string login, string password)
         {
             ServerName = serverName;
             DataBaseName = dbName;
             Login = login;
             Password = password;
             ConnectionString = $"Server={ServerName};Port=5432;Database={DataBaseName};User Id={Login};Password = {Password};";
+
+            _gRK_DBType = GRK_DBType.Postgres;
         }
 
         public bool TestConnection()

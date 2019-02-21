@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace NewGRK_Admin
 {
+    public enum GRK_DBType { MSSQL = 0, Postgres = 1, Oracle = 2 }
+
     class IGRK_DB
     {
         string ConnectionString { get; set; }

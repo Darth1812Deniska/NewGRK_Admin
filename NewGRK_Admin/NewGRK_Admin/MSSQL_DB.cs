@@ -11,13 +11,16 @@ namespace NewGRK_Admin
 {
     class MSSQL_DB : IGRK_DB
     {
-        public string ConnectionString { get ; set ; }
-        public string ServerName { get; set; }
-        public string DataBaseName { get ; set ; }
-        public string Login { get ; set ; }
-        public string Password { get ; set ; }
+        private readonly GRK_DBType _gRK_DBType;
 
-        public MSSQL_DB (string serverName, string dbName, string login, string password)
+        public string ConnectionString { get; set; }
+        public string ServerName { get; set; }
+        public string DataBaseName { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+
+        public GRK_DBType GRK_DBType => _gRK_DBType;
+        public MSSQL_DB(string serverName, string dbName, string login, string password)
         {
             ServerName = serverName;
             DataBaseName = dbName;
@@ -25,6 +28,7 @@ namespace NewGRK_Admin
             Password = password;
 
             ConnectionString = $"Data Source={ServerName};Initial Catalog={DataBaseName};User ID={Login};Password={Password}";
+            _gRK_DBType = GRK_DBType.MSSQL;
         }
 
         public bool TestConnection(string conString)
@@ -36,7 +40,7 @@ namespace NewGRK_Admin
         public bool TestConnection(string serverName, string dbName, string login, string password)
         {
             string conString = $"Data Source={serverName};Initial Catalog={dbName};User ID={login};Password={password}";
-            SqlConnection sqlConnection = new SqlConnection (conString);
+            SqlConnection sqlConnection = new SqlConnection(conString);
             return tryConnection(sqlConnection);
         }
 

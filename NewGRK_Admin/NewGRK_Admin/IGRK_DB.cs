@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewGRK_Admin
 {
+    public enum GRK_DBType { MSSQL =0 , Postgres = 1, Oracle = 2}
     interface IGRK_DB
     {
         string ConnectionString { get; set; }
@@ -13,6 +14,7 @@ namespace NewGRK_Admin
         string DataBaseName { get; set; }
         string Login { get; set; }
         string Password { get; set; }
+        GRK_DBType GRK_DBType { get; }
 
         bool TestConnection();
         bool TestConnection(string conString);

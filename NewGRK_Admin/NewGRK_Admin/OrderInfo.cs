@@ -134,5 +134,10 @@ namespace NewGRK_Admin
             }
             return output;
         }
+
+        public override string ToString()
+        {
+            return this.FullOrderName;
+        }
     }
 }

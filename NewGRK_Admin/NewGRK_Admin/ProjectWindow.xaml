@@ -1,15 +1,33 @@
-﻿<Window x:Name="wndProject" x:Class="NewGRK_Admin.ProjectWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewGRK_Admin"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Name="wndProject" x:Class="NewGRK_Admin.ProjectWindow"
         mc:Ignorable="d"
-        Title="Проект" Height="450" Width="800">
+        Title="Проект" Height="622.667" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
         <Menu Height="20" VerticalAlignment="Top" >
             <MenuItem x:Name="miProjectSettings" Header="Настройки"  Width="100"/>
         </Menu>
+        <Label Content="Тип GRK-объекта" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="10,71,0,0" VerticalAlignment="Top"/>
+        <Label Content="Отобр. название" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+        <Label Content="GRK-идентификатор" HorizontalAlignment="Left" Margin="10,156,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbGRKType" HorizontalAlignment="Left" Height="44" Margin="137,25,0,0" VerticalAlignment="Top" Width="132">
+            <RadioButton x:Name="rbDocType" Content="GRK-Документ" IsChecked="True"/>
+            <RadioButton x:Name="rbGRKVoc" Content="GRK-Справочник"/>
+        </ListBox>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="137,74,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="250"/>
+        <TextBox x:Name="txtDispLabel" HorizontalAlignment="Left" Height="23" Margin="137,130,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="250"/>
+        <ListBox x:Name="lbParentsList" HorizontalAlignment="Left" Height="80" Margin="12,208,0,0" VerticalAlignment="Top" Width="375"/>
+        <Label Content="Родитель" HorizontalAlignment="Left" Margin="12,182,0,0" VerticalAlignment="Top" />
+        <Separator Height="8" Margin="10,295,10,0" VerticalAlignment="Top"/>
+        <Label Content="UID" HorizontalAlignment="Left" Margin="10,99,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUID" HorizontalAlignment="Left" Height="23" Margin="137,102,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <Button x:Name="btnUIDGen" Content="Генерация" HorizontalAlignment="Left" Margin="392,102,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BtnUIDGen_Click"/>
+        <xctk:IntegerUpDown x:Name="spinGRK_ID" HorizontalAlignment="Left" Margin="137,159,0,0" VerticalAlignment="Top" Width="250" Height="23" Minimum="0"/>
 
     </Grid>
 </Window>

@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace NewGRK_Admin
 {
-    enum grkType
+    public enum GRKType
     {
         Document,
         Vocabulary
     }
-    class grkObject
+
+    public class GRKObject
     {
-        int ID { get; set; }
-        string Name { get; set; }
-        string DisplayLabel { get; set; }
-        int Parent { get; set; }
-        Guid UUID { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string DisplayLabel { get; set; }
+        public ObjectType Parent { get; set; }
+        public Guid UUID { get; set; }
+        public GRKType GRKType { get; }
+        public Table Table { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewGRK_Admin
 {
-    class grkDocument:grkObject
+    class grkDocument:GRKObject
     {
         grkDocument()
         {

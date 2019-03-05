@@ -22,17 +22,28 @@ namespace NewGRK_Admin
     /// </summary>
     public partial class MainWindow : Window
     {
-        private UserInfo UserInfo;
+
+        private const string OrderInfosFileName = "GRK_OrderInfos.xml";
         private const string UserInfoFileName = "GRK_UserInfo.xml";
+        
+        private UserInfo _userInfo;
+
+        private List<OrderInfo> OrderInfos => GetOrderInfos();
+        private UserInfo UserInfo => _userInfo;
         public MainWindow()
         {
             InitializeComponent();
+            LoadUserInfo();
+        }
+
+        private void LoadUserInfo()
+        {
             XmlSerializer serializer = new XmlSerializer(typeof(UserInfo));
             if (File.Exists(UserInfoFileName))
             {
                 using (FileStream fs = new FileStream(UserInfoFileName, FileMode.OpenOrCreate))
                 {
-                    UserInfo = (UserInfo)serializer.Deserialize(fs);
+                    _userInfo = (UserInfo)serializer.Deserialize(fs);
                 }
             }
             else
@@ -41,14 +52,28 @@ namespace NewGRK_Admin
                 userSettings.ShowDialog();
                 using (FileStream fs = new FileStream(UserInfoFileName, FileMode.OpenOrCreate))
                 {
-                    UserInfo = (UserInfo)serializer.Deserialize(fs);
+                    _userInfo = (UserInfo)serializer.Deserialize(fs);
                 }
             }
         }
 
+        private List<OrderInfo> GetOrderInfos ()
+        {
+            List<OrderInfo> orderInfos = new List<OrderInfo>(); ;
+            XmlSerializer serializer = new XmlSerializer(typeof(List<OrderInfo>));
+            if (File.Exists(OrderInfosFileName))
+            {
+                using (FileStream fs = new FileStream(OrderInfosFileName, FileMode.OpenOrCreate))
+                {
+                    orderInfos = (List<OrderInfo>)serializer.Deserialize(fs);
+                }
+            }
+            return orderInfos;
+        }
+
         private void BtnCreateObject_Click(object sender, RoutedEventArgs e)
         {
-            ProjectSettings projectSettings = new ProjectSettings(UserInfo);
+            ProjectSettings projectSettings = new ProjectSettings(UserInfo, OrderInfos);
             projectSettings.ShowDialog();
         }
 
@@ -56,6 +81,12 @@ namespace NewGRK_Admin
         {
             UserSettings userSettings = new UserSettings();
             userSettings.ShowDialog();
+        }
+
+        private void BtnChangeObject_Click(object sender, RoutedEventArgs e)
+        {
+            ProjectSelectionWindow selectionWindow = new ProjectSelectionWindow(OrderInfos);
+            selectionWindow.ShowDialog();
         }
     }
 }

@@ -52,5 +52,10 @@ namespace NewGRK_Admin
         {
             return this.ServerName.GetHashCode();
         }
+
+        public override string ToString()
+        {
+            return this.ServerName;
+        }
     }
 }

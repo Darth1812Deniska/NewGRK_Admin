@@ -25,9 +25,11 @@ namespace NewGRK_Admin
         private IGRK_DB DB;
         private UserInfo UserInfo;
         private List<ServerInfo> serverInfos;
+        private List<OrderInfo> OrderInfos;
 
         private const string ServerInfosFileName = "GRK_ServerInfos.xml";
-        
+        private const string OrderInfosFileName = "GRK_OrderInfos.xml";
+
         private string ServerName { get => GetServerName(); }
         private string DataBaseName { get => GetDataBaseName(); }
         private GRK_DBType GRK_DBType { get => GetGRK_DBType(); }
@@ -91,7 +93,7 @@ namespace NewGRK_Admin
             return txtOrderName.Text;
         }
 
-        public ProjectSettings(UserInfo userInfo)
+        public ProjectSettings(UserInfo userInfo, List<OrderInfo> orderInfos)
         {
             InitializeComponent();
             XmlSerializer serializer = new XmlSerializer(typeof(List<ServerInfo>));
@@ -111,12 +113,15 @@ namespace NewGRK_Admin
             cmbServerType.SelectedIndex = 0;
 
             UserInfo = userInfo;
+            OrderInfos = orderInfos;
 
             if (cmbServerType.SelectedIndex == -1)
             {
                 BlockServerInfoControls();
             }
         }
+
+        
 
         private void BtnTestConnection_Click(object sender, RoutedEventArgs e)
         {
@@ -271,18 +276,33 @@ namespace NewGRK_Admin
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            //string test = new String(Path.GetInvalidFileNameChars().ToArray());
-            ////MessageBox.Show(test);
-            //test = new String(Path.GetInvalidPathChars().ToArray());
-            //MessageBox.Show(test);
-
-            
 
             ServerInfo serverInfo = new ServerInfo(ServerName, GRK_DBType, DataBaseName, Login, Password);
             OrderInfo orderInfo = new OrderInfo(OrderNum, OrderName, OrderType, serverInfo, UserInfo);
-            MessageBox.Show($"{orderInfo.FullOrderName}, {orderInfo.FullOrderNum}, {orderInfo.OrderDirectory}, " +
-                $"{orderInfo.OrderName}, {orderInfo.OrderNum}, " +
-                $"{orderInfo.OrderType}, {orderInfo.SQLFileFullName}, {orderInfo.SQLFileName}");
+            SaveOrderInfoToXML(orderInfo);
+            ProjectWindow projectWindow = new ProjectWindow(DB, orderInfo, CurrentOperation.Create);
+            projectWindow.Show();
+            this.Close();
+        }
+
+        private void SaveOrderInfoToXML(OrderInfo orderInfo)
+        {
+            OrderInfos.Add(orderInfo);
+            MessageBox.Show(OrderInfos.Count.ToString());
+            XmlSerializer serializer = new XmlSerializer(OrderInfos.GetType());
+
+            try
+            {
+                using (FileStream fs = new FileStream(OrderInfosFileName, FileMode.Create))
+                {
+                    serializer.Serialize(fs, OrderInfos);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при создании {OrderInfosFileName}, {ex}");
+            }
+
 
         }
     }

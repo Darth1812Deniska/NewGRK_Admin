@@ -8,7 +8,14 @@
     <Password>sql</Password>
   </ServerInfo>
   <ServerInfo>
-    <ServerName>dsud-psrnkb</ServerName>
+    <ServerName>DSUD-NBRK500</ServerName>
+    <GRK_DBType>MSSQL</GRK_DBType>
+    <DBName>LD</DBName>
+    <Login>dba</Login>
+    <Password>sql</Password>
+  </ServerInfo>
+  <ServerInfo>
+    <ServerName>dsud-psql</ServerName>
     <GRK_DBType>Postgres</GRK_DBType>
     <DBName>postgres</DBName>
     <Login>dbo</Login>
@@ -22,7 +29,7 @@
     <Password>sql</Password>
   </ServerInfo>
   <ServerInfo>
-    <ServerName>dsud-psql</ServerName>
+    <ServerName>dsud-psrnkb</ServerName>
     <GRK_DBType>Postgres</GRK_DBType>
     <DBName>postgres</DBName>
     <Login>dbo</Login>

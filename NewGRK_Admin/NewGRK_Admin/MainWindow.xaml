@@ -5,22 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NewGRK_Admin"
         mc:Ignorable="d"
-        Title="Главное" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Главное" Height="210" Width="420" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Button x:Name="btnCreateObject" Content="Создать &#xD;&#xA;новый GRK-объект" RenderTransformOrigin="0.5,0.5" Width="130" Height="100" HorizontalAlignment="Left"   VerticalAlignment="Center" Click="BtnCreateObject_Click"/>
-        <Button x:Name="btnChangeObject" Content="Изменить &#xD;&#xA;GRK-объект"      RenderTransformOrigin="0.5,0.5" Width="130" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center"   />
+        <Button x:Name="btnChangeObject" Content="Изменить &#xD;&#xA;GRK-объект"      RenderTransformOrigin="0.5,0.5" Width="130" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Click="BtnChangeObject_Click"   />
         <Button x:Name="btnEtc"          Content="Дополнительно"                      RenderTransformOrigin="0.5,0.5" Width="130" Height="100" HorizontalAlignment="Right"  VerticalAlignment="Center"   />
         <Menu Height="20" VerticalAlignment="Top" >
             <MenuItem x:Name="miFile" Header="Файл"  Width="60"/>
             <MenuItem x:Name="miSettings" Header="Настройки"  Width="80" Click="MiSettings_Click"/>
             <MenuItem x:Name="miHelp" Header="Помощь"  Width="80"/>
         </Menu>
+        <Grid></Grid>
 
     </Grid>
 </Window>
